@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>feeeetch</title>
+<script src="jquery.min.js"></script>
+<script src="gfapi.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<!--
+https://arabi21.com/Rss/SectionNewsRSS?id=320
+https://arabi21.com/Rss/SectionNewsRSS?id=421
+https://arabi21.com/Rss/SectionNewsRSS?id=408
+https://arabi21.com/Rss/SectionNewsRSS?id=305
+-->
+<script>
+google.load("feeds", "1");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("https://arabi21.com/Rss/SectionNewsRSS?id=316&_ga=2.170017056.120769014.1616896951-217957536.1616896951");
+       feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed3");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+			
+            var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+			 
+  
+		var div = document.createElement("h2");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+	
+           var p = document.createElement("p");
+            p.innerHTML = '<p' + entry.content  ;
+            container.appendChild(p);
+		
+            	
+			
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+		
+          }document.querySelector("h3").style.color = "Blue";
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+
+<script>		
+google.load("feeds", "2");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://feeds.bbci.co.uk/news/world/rss.xml");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+			
+            var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+			var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			
+			 var li = document.createElement('p');
+            li.appendChild(document.createTextNode(entry.description));
+            container.appendChild(li);
+           
+			var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+			
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+
+<script>
+google.load("feeds", "3");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feedo");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+			
+            var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+			
+			var li = document.createElement("h2");
+			
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+			
+			
+			var p = document.createElement('p');
+            p.appendChild(document.createTextNode(entry.contentSnippet));
+            container.appendChild(p);
+			var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+<style>
+body {
+
+}hr {background-color: #B0BEC5;height: 4px;}
+#feed {direction: ltr;}
+#feedo {direction: rtl;}
+img {
+  max-width: 100%;
+  box-shadow: 0 0 3px #B0BEC5;
+}
+h2 {color: brown;}
+h3 {color: white;}
+a {
+display: inline-block;
+border: 2px solid lightBlue;
+}
+p{
+font-family: '';
+font-size: 1.2em;
+}
+#feed {
+background-color: cyan;
+}
+#feedo {
+background-color: orange;
+}
+#feed3 {
+background-color: yellow;
+direction: rtl;
+}
+
+	</style><body>
+<div id="feed3"></div>
+
+   <ul id="feed"></ul>
+ <div id="feedo"></div>
+
+</body>
+</html>
