@@ -119,10 +119,46 @@ google.load("feeds", "3");
     }
     google.setOnLoadCallback(initialize);
 </script>
-<style>
-body {
+<script>
+google.load("feeds", "4");
 
-}hr {background-color: #B0BEC5;height: 4px;}
+    function initialize() {
+      var feed = new google.feeds.Feed("https://arabi21.com/Rss/SectionNewsRSS?id=320");
+       feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed3");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+			
+            var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+			 
+  
+		var div = document.createElement("h2");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+	
+           var p = document.createElement("p");
+            p.innerHTML = '<p' + entry.content  ;
+            container.appendChild(p);
+		
+            	
+			
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+		
+          }document.querySelector("h3").style.color = "Blue";
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+<style>
+body {}
+img {width: 400px;}
+hr {background-color: #B0BEC5;height: 4px;}
 #feed {direction: ltr;}
 #feedo {direction: rtl;}
 img {
