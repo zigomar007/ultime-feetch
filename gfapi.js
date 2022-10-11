@@ -18,8 +18,8 @@ window.google.feeds.Feed = function(rssUrl,options){
             googleFormat.feed.feedUrl = data.feed.url;
 	    googleFormat.feed.title = data.feed.title;
             googleFormat.feed.link = data.feed.link;
-            googleFormat.feed.description = data.feed.description;
-            googleFormat.feed.author = data.feed.author;
+            googleFormat.feed.description = data.feed.content;
+            googleFormat.feed.author = data.feed.author.name;
             googleFormat.feed.entries = [];
 
             if(typeof _itemsCount == 'undefined'){
