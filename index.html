@@ -90,7 +90,7 @@ google.load("feeds", "1");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
            var li = document.createElement("div");
-	    li.appendChild(document.createTextNode(entry.contentSnippet));
+	    div.innerHTML =  '<' + entry.contentSnippet  ;
             container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
