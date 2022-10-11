@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>feeeetch</title>
-<script src="jquery.min.js"></script>
 <script src="gfapi.js"></script>
 <script src="https://www.google.com/jsapi"></script>
 <!--
@@ -13,11 +12,8 @@ https://arabi21.com/Rss/SectionNewsRSS?id=408
 https://arabi21.com/Rss/SectionNewsRSS?id=305
 -->
 <style>
-body {}
 img {width: 400px;}
 hr {background-color: #B0BEC5;height: 4px;}
-#feed {direction: ltr;}
-#feedo {direction: rtl;}
 img {
   max-width: 100%;
   box-shadow: 0 0 3px #B0BEC5;
@@ -80,25 +76,21 @@ google.load("feeds", "1");
           var container = document.getElementById("feed1");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
-            var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			 
-  
-		var div = document.createElement("h2");
-            div.appendChild(document.createTextNode(entry.title));
-            container.appendChild(div);
-	
-           var p = document.createElement("p");
-            p.innerHTML = '<p' + entry.content  ;
-            container.appendChild(p);
-		
-            	
-			
-		var a = document.createElement("span");
-            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
-            container.appendChild(a);
+		var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
+		var li = document.createElement("span");
+            li.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(li);
 		
           }document.querySelector("h3").style.color = "Blue";
         }
@@ -117,18 +109,18 @@ google.load("feeds", "2");
           var container = document.getElementById("feed2");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
             var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			var li = document.createElement("h2");
+		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
-			
-			 var li = document.createElement('p');
-            li.appendChild(document.createTextNode(entry.description));
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-           
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
 			var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
@@ -154,20 +146,15 @@ google.load("feeds", "3");
             var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			
-			var li = document.createElement("h2");
-			
+		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
-			
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-			
-			
-			var p = document.createElement('p');
-            p.appendChild(document.createTextNode(entry.contentSnippet));
-            container.appendChild(p);
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
 			var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
@@ -187,21 +174,18 @@ google.load("feeds", "4");
           var container = document.getElementById("feed4");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
-            var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			 
-  
-		var div = document.createElement("h2");
-            div.appendChild(document.createTextNode(entry.title));
-            container.appendChild(div);
-	 var p = document.createElement("p");
-             p.innerHTML = '<p' + entry.content;
-            container.appendChild(p);
-		
-            	
-			
+		var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
