@@ -35,8 +35,7 @@ window.google.feeds.Feed = function(rssUrl,options){
                 _itemsCount--;
                 googleFormat.feed.entries.push({
                     title : item.title,
-		    description : item.description,
-                    link : item.link,
+		    link : item.link,
                     author : item.author,
                     contentSnippet : item.content,
                     publishedDate : item.pubDate,
