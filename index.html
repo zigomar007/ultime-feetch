@@ -20,6 +20,7 @@ img {
 }
 h2 {color: brown;}
 h3 {color: white;}
+h4 {color: green;}
 a {
 display: inline-block;
 border: 2px solid lightBlue;
@@ -82,17 +83,20 @@ google.load("feeds", "1");
 		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
            var li = document.createElement("p");
             li.innerHTML = '<p' + entry.content  ;
             container.appendChild(li);
-		var li = document.createElement("span");
-            li.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
-            container.appendChild(li);
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
 		
-          }document.querySelector("h3").style.color = "Blue";
+          }
         }
       });
     }
@@ -107,13 +111,16 @@ google.load("feeds", "2");
       feed.load(function(result) {
         if (!result.error) {
           var container = document.getElementById("feed2");
-          for (var i = 0; i < result.feed.entries.length; i++) {
+        for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-            var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
 		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
             container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
@@ -121,10 +128,10 @@ google.load("feeds", "2");
            var li = document.createElement("p");
             li.innerHTML = '<p' + entry.content  ;
             container.appendChild(li);
-			var a = document.createElement("span");
+		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
-			
+		
           }
         }
       });
@@ -140,14 +147,16 @@ google.load("feeds", "3");
       feed.load(function(result) {
         if (!result.error) {
           var container = document.getElementById("feed3");
-          for (var i = 0; i < result.feed.entries.length; i++) {
+         for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
-            var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
 		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
             container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
@@ -155,9 +164,10 @@ google.load("feeds", "3");
            var li = document.createElement("p");
             li.innerHTML = '<p' + entry.content  ;
             container.appendChild(li);
-			var a = document.createElement("span");
+		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
+		
           }
         }
       });
@@ -180,6 +190,9 @@ google.load("feeds", "4");
 		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
@@ -190,7 +203,7 @@ google.load("feeds", "4");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
 		
-          }document.querySelector("h3").style.color = "Blue";
+          }
         }
       });
     }
@@ -206,29 +219,26 @@ google.load("feeds", "5");
           var container = document.getElementById("feed5");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			 var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			
-			var li = document.createElement("h2");
-			
+		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
-			
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-			
-			
-			 var p = document.createElement("p");
-            p.innerHTML = '<p' + entry.content;
-            container.appendChild(p);
-			
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
 		
-          }document.querySelector("h3").style.color = "Blue";
+          }
         }
       });
     }
@@ -244,30 +254,26 @@ google.load("feeds", "7");
           var container = document.getElementById("feed7");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			 var li = document.createElement("h3");
+			var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
-			
-			var li = document.createElement("h2");
-			
+		var li = document.createElement("h2");
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
-			
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-			
-			
-	
-           var p = document.createElement("p");
-            p.innerHTML = '<p' + entry.content;
-            container.appendChild(p);
-			
+           var li = document.createElement("p");
+            li.innerHTML = '<p' + entry.content  ;
+            container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
             container.appendChild(a);
 		
-          }document.querySelector("h3").style.color = "Blue";
+          }
         }
       });
     }
