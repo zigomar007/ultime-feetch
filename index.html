@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -12,6 +12,64 @@ https://arabi21.com/Rss/SectionNewsRSS?id=421
 https://arabi21.com/Rss/SectionNewsRSS?id=408
 https://arabi21.com/Rss/SectionNewsRSS?id=305
 -->
+<style>
+body {}
+img {width: 400px;}
+hr {background-color: #B0BEC5;height: 4px;}
+#feed {direction: ltr;}
+#feedo {direction: rtl;}
+img {
+  max-width: 100%;
+  box-shadow: 0 0 3px #B0BEC5;
+}
+h2 {color: brown;}
+h3 {color: white;}
+a {
+display: inline-block;
+border: 2px solid lightBlue;
+}
+p{
+font-family: '';
+font-size: 1.2em;
+}
+#feed1 {
+background-color: cyan;
+direction: rtl;
+}
+#feed2 {
+background-color: orange;
+}
+#feed3 {
+background-color: yellow;
+direction: rtl;
+}
+#feed4 {
+background-color: magenta;
+direction: rtl;
+}	
+#feed5 {
+background-color: pink;
+direction: rtl;
+}
+#feed7 {
+background-color: RGB(165,210,34);
+direction: rtl;
+}
+</style>
+</head>
+<body>
+arabi21 316
+<div id="feed1"></div>
+bbci news/world
+<div id="feed2"></div>
+aljazeera	
+	<div id="feed3"></div>
+arabi21 421
+	<div id="feed4"></div>
+café zigomar cf
+   <ul id="feed5"></ul>
+café zigomar ml
+<ul id="feed7"></ul>	
 <script>
 google.load("feeds", "1");
 
@@ -179,8 +237,9 @@ google.load("feeds", "5");
             container.appendChild(li);
 			
 			
-			var p = document.createElement('p');
-            p.appendChild(document.createTextNode(entry.contentSnippet));
+			 var p = document.createElement("p");
+		  
+            p.innerHTML = '<p' + entry.content  ;
             container.appendChild(p);
 			
 		var a = document.createElement("span");
@@ -217,8 +276,10 @@ google.load("feeds", "7");
             container.appendChild(li);
 			
 			
-			var p = document.createElement('p');
-            p.appendChild(document.createTextNode(entry.contentSnippet));
+	
+           var p = document.createElement("p");
+            p.innerHTML = '<p' + entry.content  ;
+           
             container.appendChild(p);
 			
 		var a = document.createElement("span");
@@ -231,62 +292,6 @@ google.load("feeds", "7");
     }
     google.setOnLoadCallback(initialize);
 </script>
-<style>
-body {}
-img {width: 400px;}
-hr {background-color: #B0BEC5;height: 4px;}
-#feed {direction: ltr;}
-#feedo {direction: rtl;}
-img {
-  max-width: 100%;
-  box-shadow: 0 0 3px #B0BEC5;
-}
-h2 {color: brown;}
-h3 {color: white;}
-a {
-display: inline-block;
-border: 2px solid lightBlue;
-}
-p{
-font-family: '';
-font-size: 1.2em;
-}
-#feed1 {
-background-color: cyan;
-direction: rtl;
-}
-#feed2 {
-background-color: orange;
-}
-#feed3 {
-background-color: yellow;
-direction: rtl;
-}
-#feed4 {
-background-color: magenta;
-direction: rtl;
-}	
-#feed5 {
-background-color: pink;
-direction: rtl;
-}
-#feed7 {
-background-color: RGB(165,210,34);
-direction: rtl;
-}
-</style>
-<body>
-arabi21 316
-<div id="feed1"></div>
-bbci news/world
-<div id="feed2"></div>
-aljazeera	
-	<div id="feed3"></div>
-arabi21 421
-	<div id="feed4"></div>
-café zigomar cf
-   <ul id="feed5"></ul>
-café zigomar ml
-<ul id="feed7"></ul>
+
 </body>
 </html>
