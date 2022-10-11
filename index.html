@@ -165,21 +165,23 @@ google.load("feeds", "5");
           var container = document.getElementById("feed5");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
-		 var li = document.createElement("h3");
+			 var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
+			
 			var li = document.createElement("h2");
+			
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
+			
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-			 var li = document.createElement('p');
-            li.appendChild(document.createTextNode(entry.description));
-            container.appendChild(li);
-		
-		 	
+			
+			
+			var p = document.createElement('p');
+            p.appendChild(document.createTextNode(entry.contentSnippet));
+            container.appendChild(p);
 			
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
@@ -201,22 +203,23 @@ google.load("feeds", "7");
           var container = document.getElementById("feed7");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
-			
-		 var li = document.createElement("h3");
+			 var li = document.createElement("h3");
             li.appendChild(document.createTextNode(entry.categories));
             container.appendChild(li);
+			
 			var li = document.createElement("h2");
+			
             li.appendChild(document.createTextNode(entry.title));
             container.appendChild(li);
+			
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-			 var li = document.createElement('p');
-            li.appendChild(document.createTextNode(entry.description));
-	
-            container.appendChild(li);
-		
-		 	
+			
+			
+			var p = document.createElement('p');
+            p.appendChild(document.createTextNode(entry.contentSnippet));
+            container.appendChild(p);
 			
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
@@ -268,7 +271,7 @@ background-color: pink;
 direction: rtl;
 }
 #feed7 {
-background-color: brown;
+background-color: RGB(165,210,34);
 direction: rtl;
 }
 </style>
