@@ -232,9 +232,10 @@ google.load("feeds", "5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
          var a = document.createElement("span");
-            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a>";
-            container.appendChild(a);  var li = document.createElement("p");
-	  li.innerHTML = '<p' + entry.contentSnippet + </p><hr/>;
+            a.innerHTML = '<a href="' + entry.link +'">' + 'اكمل القراءة' + '></a>';
+            container.appendChild(a);
+        var li = document.createElement("p");
+	  li.innerHTML = '<p' + entry.contentSnippet + '</p><hr/>';
             container.appendChild(li);
 		
 		
