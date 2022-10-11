@@ -16,7 +16,7 @@ window.google.feeds.Feed = function(rssUrl,options){
 
         if(data.status == 'ok'){
             googleFormat.feed.feedUrl = data.feed.url;
-			googleFormat.feed.title = data.feed.title;
+	    googleFormat.feed.title = data.feed.title;
             googleFormat.feed.link = data.feed.link;
             googleFormat.feed.description = data.feed.description;
             googleFormat.feed.author = data.feed.author;
@@ -35,9 +35,9 @@ window.google.feeds.Feed = function(rssUrl,options){
                 _itemsCount--;
                 googleFormat.feed.entries.push({
                     title : item.title,
-					description : item.description,
+		    description : item.description,
                     link : item.link,
-                    content : item.content,
+                    author : item.author,
                     contentSnippet : item.content,
                     publishedDate : item.pubDate,
                     categories : item.categories,
