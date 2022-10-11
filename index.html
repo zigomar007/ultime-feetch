@@ -232,7 +232,7 @@ google.load("feeds", "5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
            var li = document.createElement("p");
-            li.innerHTML = '<p' + entry.content  ;
+            li.innerHTML = '<p' + entry.contentSnippet  ;
             container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
@@ -267,7 +267,7 @@ google.load("feeds", "7");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
            var li = document.createElement("p");
-            li.innerHTML = '<p' + entry.content  ;
+            li.innerHTML = '<p' + entry.contentSnippet  ;
             container.appendChild(li);
 		var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
@@ -279,4 +279,6 @@ google.load("feeds", "7");
     }
     google.setOnLoadCallback(initialize);
 </script>
-</body></html>
+
+</body>
+</html>
