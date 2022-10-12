@@ -61,6 +61,10 @@ direction: rtl;
 background-color: #55EB4C;
 direction: rtl;
 }
+#feed10 {
+background-color: #20EB2C;
+direction: rtl;
+}
 </style>
 </head>
 <body>
@@ -80,6 +84,8 @@ café zigomar ml
 <div id="feed8"></div>	
 zigomar tk xmpl
 <div id="feed9"></div>
+zigomar tk feed
+<div id="feed10"></div>
 <script>
 google.load("feeds", "1");
 
@@ -359,6 +365,43 @@ google.load("feeds", "8");
             container.appendChild(li);
          
         var li = document.createElement("li");
+            li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
+            container.appendChild(li);
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+		
+		
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+<script>
+google.load("feeds", "9");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://zigomar.tk/feed.xml");
+       feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed10");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+	var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+		var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+        var li = document.createElement("li");
+		li.appendChild(document.createTextNode(entry.contentSnippet));
             li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
             container.appendChild(li);
 		var a = document.createElement("span");
