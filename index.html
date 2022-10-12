@@ -247,13 +247,13 @@ google.load("feeds", "5");
     google.setOnLoadCallback(initialize);
 </script>
 <script>
-google.load("feeds", "7");
+google.load("feeds", "4");
 
     function initialize() {
       var feed = new google.feeds.Feed("https://cafezigomar.ml/feed.xml");
-      feed.load(function(result) {
+       feed.load(function(result) {
         if (!result.error) {
-          var container = document.getElementById("feed5");
+          var container = document.getElementById("feed4");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
 	var li = document.createElement("h3");
@@ -268,8 +268,7 @@ google.load("feeds", "7");
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-         
-        var li = document.createElement("li");
+           var li = document.createElement("li");
             li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
             container.appendChild(li);
 		var a = document.createElement("span");
@@ -282,6 +281,5 @@ google.load("feeds", "7");
     }
     google.setOnLoadCallback(initialize);
 </script>
-
 </body>
 </html>
