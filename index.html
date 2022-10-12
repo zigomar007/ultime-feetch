@@ -57,6 +57,10 @@ direction: rtl;
 background-color: blue;
 direction: rtl;
 }
+#feed9 {
+background-color: #55EB4C;
+direction: rtl;
+}
 </style>
 </head>
 <body>
@@ -74,6 +78,8 @@ zigomar cf
 <div id="feed7"></div>	
 café zigomar ml
 <div id="feed8"></div>	
+zigomar tk xmpl
+<div id="feed9"></div>
 <script>
 google.load("feeds", "1");
 
@@ -254,7 +260,7 @@ google.load("feeds", "5");
     google.setOnLoadCallback(initialize);
 </script>
 <script>
-google.load("feeds", "27");
+google.load("feeds", "6");
 
     function initialize() {
       var feed = new google.feeds.Feed("https://zigomar.cf/zigomar.xml");
@@ -293,13 +299,50 @@ google.load("feeds", "27");
     google.setOnLoadCallback(initialize);
 </script>
 <script>
-google.load("feeds", "5");
+google.load("feeds", "7");
 
     function initialize() {
       var feed = new google.feeds.Feed("https://raw.githubusercontent.com/zigomar007/cafezigomar.ml/main/feed.xml");
        feed.load(function(result) {
         if (!result.error) {
           var container = document.getElementById("feed8");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+	var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+		var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+         
+        var li = document.createElement("li");
+            li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
+            container.appendChild(li);
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+		
+		
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
+<script>
+google.load("feeds", "8");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("http://zigomar.tk/xmpl.xml");
+       feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed9");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
 	var li = document.createElement("h3");
