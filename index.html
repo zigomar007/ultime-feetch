@@ -270,9 +270,9 @@ google.load("feeds", "27");
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
-           var p = document.createElement("p");
-            p.innerHTML = '<p' + entry.content  ;
-            container.appendChild(p);	
+           var li = document.createElement("li");
+            li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
+            container.appendChild(li);	
 	
 	var a = document.createElement("span");
             a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
