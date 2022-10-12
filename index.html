@@ -12,7 +12,7 @@ https://arabi21.com/Rss/SectionNewsRSS?id=408
 https://arabi21.com/Rss/SectionNewsRSS?id=305
 -->
 <style>
-img {width: 400px;}
+img {width: 200px;}
 hr {background-color: #B0BEC5;height: 4px;}
 img {
   max-width: 100%;
@@ -23,10 +23,10 @@ h3 {color: white;}
 h4 {color: green;}
 a {
 display: inline-block;
-border: 2px solid lightBlue;
+border: 3px solid lightBlue;
 }
 p{
-font-family: '';
+font-family: 'helvetica';
 font-size: 1.2em;
 }
 #feed1 {
@@ -52,6 +52,10 @@ direction: rtl;
 background-color: RGB(165,210,34);
 direction: rtl;
 }
+#feed8 {
+background-color: blue;
+direction: rtl;
+}
 </style>
 </head>
 <body>
@@ -65,8 +69,10 @@ arabi21 421
 	<div id="feed4"></div>
 café zigomar cf
    <div id="feed5"></div>
-café zigomar ml
+zigomar cf
 <div id="feed7"></div>	
+café zigomar ml
+<div id="feed8"></div>	
 <script>
 google.load("feeds", "1");
 
@@ -292,7 +298,7 @@ google.load("feeds", "5");
       var feed = new google.feeds.Feed("https://cafezigomar.ml/feed.xml");
        feed.load(function(result) {
         if (!result.error) {
-          var container = document.getElementById("feed5");
+          var container = document.getElementById("feed8");
           for (var i = 0; i < result.feed.entries.length; i++) {
             var entry = result.feed.entries[i];
 	var li = document.createElement("h3");
