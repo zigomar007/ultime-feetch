@@ -284,6 +284,43 @@ google.load("feeds", "27");
       });
     }
     google.setOnLoadCallback(initialize);
-</script> 
+</script>
+<script>
+google.load("feeds", "5");
+
+    function initialize() {
+      var feed = new google.feeds.Feed("https://cafezigomar.ml/feed.xml");
+       feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed5");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+	var li = document.createElement("h3");
+            li.appendChild(document.createTextNode(entry.categories));
+            container.appendChild(li);
+		var li = document.createElement("h2");
+            li.appendChild(document.createTextNode(entry.title));
+            container.appendChild(li);
+			var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
+			var li = document.createElement("h5");
+            li.appendChild(document.createTextNode(entry.publishedDate));
+            container.appendChild(li);
+         
+        var li = document.createElement("li");
+            li.innerHTML = '<p' + entry.contentSnippet +'</p>'  ;
+            container.appendChild(li);
+		var a = document.createElement("span");
+            a.innerHTML = '<a href="' + entry.link +'">' + "اكمل القراءة" + "></a><hr/>";
+            container.appendChild(a);
+		
+		
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+</script>
 </body>
 </html>
