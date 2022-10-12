@@ -264,10 +264,9 @@ google.load("feeds", "27");
 		var div = document.createElement("h2");
             div.appendChild(document.createTextNode(entry.title));
             container.appendChild(div);
-	
-	var p = document.createElement("p");
-            p.appendChild(document.createTextNode(entry.author));
-            container.appendChild(p);
+	var li = document.createElement("h4");
+            li.appendChild(document.createTextNode(entry.author));
+            container.appendChild(li);
 			var li = document.createElement("h5");
             li.appendChild(document.createTextNode(entry.publishedDate));
             container.appendChild(li);
